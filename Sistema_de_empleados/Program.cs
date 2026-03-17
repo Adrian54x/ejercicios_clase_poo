@@ -1,5 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 List<Empleado> empleados = new List<Empleado>();
+Console.Write("Ingrese la cantidad de empleados que va a ingresar:");
+int cantidad = int.Parse(Console.ReadLine());
+for(int i = 0; i < cantidad; i++)
+{
+    Empleado e = new Empleado();
+    Console.Write("Nombre:");
+    e.Nombre = Console.ReadLine();
+    Console.Write("Puesto:");
+    e.Puesto = Console.ReadLine()
+    Console.Write("Salario:");
+    e.Salario = double.Parse(Console.ReadLine());
+}
 class Empleado
 {
     public string Nombre;
@@ -32,12 +44,12 @@ class Empleado
         }
         else
         {
-            return "Salario Bajo";
+            return "Salario Basico";
         }
     }
     public void MostrarProductos()
     {
-        Console.WriteLine($"\nNombre del Trabajador:{Nombre} \nSalario:Q{Salario} / {ClasificarSalario()} \nValor total del producto:{ValorTotal():F2}");
+        Console.WriteLine($"\nNombre del Trabajador:{Nombre} \nPuesto:{Puesto} \nSalario:Q{Salario} / {ClasificarSalario()} \nSalario Anual:{SalarioAnual():F2} \nBono:{Bono():F2}");
     }
 }
 
