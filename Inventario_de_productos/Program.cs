@@ -54,6 +54,6 @@ class Producto
     }
     public void MostrarProductos()
     {
-        Console.WriteLine($"\nNombre del producto:{Nombre} \nPrecio:Q{Precio} \nStock:{Stock()} \nValor total del producto{ValorTotal():F2}");
+        Console.WriteLine($"\nNombre del producto:{Nombre} \nPrecio:Q{Precio} \nStock:{Stock()} \nValor total del producto:{ValorTotal():F2}");
     }
 }
