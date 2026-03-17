@@ -13,6 +13,21 @@ for (int i = 0; i < cantidad; i++)
     p.Cantidad = int.Parse(Console.ReadLine());
     productos.Add(p);
 }
+double valorTotalInventario = 0;
+Producto mayorPrecio = productos[0];
+Console.WriteLine("\nProductos ingresados:");
+foreach(Producto p in productos)
+{
+    p.MostrarProductos();
+    if (p.Precio > mayorPrecio.Precio)
+    {
+        mayorPrecio = p;
+    }
+    valorTotalInventario += p.ValorTotal();
+}
+Console.WriteLine($"Valor total del inventario: Q{valorTotalInventario}");
+Console.WriteLine("Mayor precio:");
+mayorPrecio.MostrarProductos();
 class Producto
 {
     public string Nombre;
@@ -36,5 +51,9 @@ class Producto
         {
             return "Stock Suficiente";
         }
+    }
+    public void MostrarProductos()
+    {
+        Console.WriteLine($"\nNombre del producto:{Nombre} \nPrecio:{Precio} \nStock:{Stock()} \nValor total del producto{ValorTotal():F2}");
     }
 }
