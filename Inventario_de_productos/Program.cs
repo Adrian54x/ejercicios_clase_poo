@@ -25,8 +25,8 @@ foreach(Producto p in productos)
     }
     valorTotalInventario += p.ValorTotal();
 }
-Console.WriteLine($"Valor total del inventario: Q{valorTotalInventario}");
-Console.WriteLine("Mayor precio:");
+Console.WriteLine($"\nValor total del inventario: Q{valorTotalInventario}");
+Console.WriteLine("\nMayor precio:");
 mayorPrecio.MostrarProductos();
 class Producto
 {
@@ -54,6 +54,6 @@ class Producto
     }
     public void MostrarProductos()
     {
-        Console.WriteLine($"\nNombre del producto:{Nombre} \nPrecio:{Precio} \nStock:{Stock()} \nValor total del producto{ValorTotal():F2}");
+        Console.WriteLine($"\nNombre del producto:{Nombre} \nPrecio:Q{Precio} \nStock:{Stock()} \nValor total del producto{ValorTotal():F2}");
     }
 }
