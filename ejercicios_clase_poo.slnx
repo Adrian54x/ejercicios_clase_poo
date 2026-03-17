@@ -1,1 +1,3 @@
-<Solution />
+<Solution>
+  <Project Path="registro_de_estudiantes/registro_de_estudiantes.csproj" />
+</Solution>
