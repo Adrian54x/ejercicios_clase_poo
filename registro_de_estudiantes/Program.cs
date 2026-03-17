@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using System.Collections.Concurrent;
 List<Estudiante> estudiantes = new List<Estudiante>();
 Console.Write("Cuantos estudiantes desea ingresar:");
 int cantidad = int.Parse(Console.ReadLine());
@@ -16,6 +16,18 @@ for (int i = 0; i < cantidad; i++)
     e.Nota3 = double.Parse(Console.ReadLine());
     estudiantes.Add(e);
 }
+Estudiante mejorPromedio = estudiantes[0];
+Console.WriteLine("\nEstudiamntes registrados");
+foreach(Estudiante e in estudiantes)
+{
+    e.InformacionEstudiante();
+    if(e.PromedioNota() > mejorPromedio.PromedioNota())
+    {
+        mejorPromedio = e;
+    }
+}
+Console.WriteLine("El mejor promedio es:");
+mejorPromedio.InformacionEstudiante();
 class Estudiante
 {
     public string Nombre;
@@ -39,6 +51,6 @@ class Estudiante
     }
     public void InformacionEstudiante()
     {
-        Console.WriteLine($"\nNombre:{Nombre} \nPromedio:{PromedioNota()} \nEstado:{EstadoDeEstudiante}");
+        Console.WriteLine($"\nNombre:{Nombre} \nPromedio:{PromedioNota():F2} \nEstado:{EstadoDeEstudiante}");
     }
 }
