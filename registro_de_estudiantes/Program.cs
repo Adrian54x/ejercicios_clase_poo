@@ -6,13 +6,13 @@ int cantidad = int.Parse(Console.ReadLine());
 for (int i = 0; i < cantidad; i++)
 {
     Estudiante e = new Estudiante();
-    Console.Write($"{i + 1}. Nombre de estudiante:");
+    Console.Write($"\n{i + 1}. Nombre de estudiante:");
     e.Nombre = Console.ReadLine();
-    Console.Write(" Nota1:");
+    Console.Write("   Nota1:");
     e.Nota1 = double.Parse(Console.ReadLine());
-    Console.Write(" Nota2:");
+    Console.Write("   Nota2:");
     e.Nota2 = double.Parse(Console.ReadLine());
-    Console.Write(" Nota3:");
+    Console.Write("   Nota3:");
     e.Nota3 = double.Parse(Console.ReadLine());
     estudiantes.Add(e);
 }
@@ -26,7 +26,7 @@ foreach(Estudiante e in estudiantes)
         mejorPromedio = e;
     }
 }
-Console.WriteLine("El mejor promedio es:");
+Console.WriteLine("\nEl mejor promedio es:");
 mejorPromedio.InformacionEstudiante();
 class Estudiante
 {
@@ -51,6 +51,6 @@ class Estudiante
     }
     public void InformacionEstudiante()
     {
-        Console.WriteLine($"\nNombre:{Nombre} \nPromedio:{PromedioNota():F2} \nEstado:{EstadoDeEstudiante}");
+        Console.WriteLine($"\nNombre:{Nombre} \nPromedio:{PromedioNota():F2} \nEstado:{EstadoDeEstudiante()}");
     }
 }
